@@ -145,6 +145,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "github-repo-preview"
+    }
+  },
+  "defaultProject": "github-repo-preview",
+  "cli": {
+    "analytics": false
+  }
 }
