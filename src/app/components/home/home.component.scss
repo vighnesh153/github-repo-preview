@@ -1,0 +1,148 @@
+@import "src/theme";
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  // if border not given, margin-top: 40px given to input-container
+  // gets applied to container and the margin top of input-container
+  // becomes 0. What the heck!!!
+  border: 1px solid transparent;
+}
+
+.input-container {
+  width: 50%;
+  position: relative;
+  margin: 40px auto 0;
+  padding: 20px;
+
+  box-shadow: 0 0 10px #bbb;
+}
+
+.belongs-to-form-container {
+  position: relative;
+  margin-bottom: 20px;
+
+  .title {
+    margin-bottom: 20px;
+
+    color: $color1;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .belongs-to-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    label {
+      font-size: 20px;
+    }
+  }
+}
+
+.owner-name-form {
+  height: 100px;
+  position: relative;
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  $child-width: 70%;
+
+  label {
+    width: $child-width;
+    position: relative;
+  }
+
+  input {
+    width: 100%;
+    padding: 5px 10px;
+
+    font-size: 20px;
+  }
+
+  .btn-search {
+    width: $child-width;
+    height: 35px;
+
+    color: $color1;
+    font-size: 20px;
+
+    cursor: pointer;
+    outline: none;
+    transition: transform 200ms ease-in-out;
+
+    &:hover {
+      border: 1px solid #aaa;
+
+      background-color: $color1;
+      color: $color2;
+      font-weight: 700;
+
+      transform: scale(1.01);
+    }
+  }
+
+  .disabled {
+    color: #888;
+    font-weight: 700;
+    cursor: auto;
+
+    &:hover {
+      background-color: #EFEFEF;
+      color: #888;
+      font-size: 20px;
+      font-weight: 700;
+
+      transform: scale(1);
+    }
+  }
+}
+
+.repositories {
+  width: 50%;
+  position: relative;
+  margin: 20px auto;
+
+  box-shadow: 0 0 10px #bbb;
+
+  .title {
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: $color1;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .repository {
+    height: 50px;
+
+    border-bottom: 1px solid #999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: $color1;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+
+    &:hover {
+      background-color: #eee;
+      font-size: 17px;
+    }
+  }
+}

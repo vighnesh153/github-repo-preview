@@ -1,0 +1,13 @@
+<div class="container">
+  <div
+    *ngFor="let message of messages"
+    [ngClass]="{
+      info: message.toast.type === type.INFO,
+      success: message.toast.type === type.SUCCESS,
+      error: message.toast.type === type.ERROR
+     }"
+    class="toast"
+  >
+    {{ message.toast.message }}
+  </div>
+</div>

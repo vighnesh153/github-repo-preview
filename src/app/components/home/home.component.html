@@ -1,1 +1,40 @@
-<p>home works!</p>
+<div class="container">
+  <div class="input-container">
+    <div class="belongs-to-form-container">
+      <div class="title">
+        Repository belongs to
+      </div>
+      <form class="belongs-to-form" [formGroup]="form">
+        <label><input type="radio" formControlName="belongsTo" value="users"> User</label>
+        <label><input type="radio" formControlName="belongsTo" value="orgs"> Organization</label>
+      </form>
+    </div>
+
+    <hr>
+
+    <div class="owner-name-form">
+      <label>
+        <input [placeholder]="placeHolderMappings[belongsTo]"
+               type="text" [(ngModel)]="ownerName">
+      </label>
+      <button class="btn-search"
+              [ngClass]="{
+                disabled: isSearchDisabled
+              }"
+              (click)="searchRepos()">Search Repositories</button>
+    </div>
+  </div>
+
+  <div class="repositories" *ngIf="repositories.length > 0">
+    <div class="title">
+      Repositories
+    </div>
+    <hr>
+    <div class="repository"
+         *ngFor="let repo of repositories"
+         (click)="browse(repo)"
+    >
+      {{ repo.full_name }}
+    </div>
+  </div>
+</div>
