@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 import { Repository } from 'src/app/models/Repository';
 import { ToastService } from 'src/app/services/toast.service';
 import { ToastType } from 'src/app/models/Toast';
+import { StateService } from 'src/app/services/state.service';
 
 @Component({
   selector: 'app-home',
@@ -34,7 +35,8 @@ export class HomeComponent implements OnInit {
   }
 
   constructor(private contentProvider: ContentProviderService,
-              private toastService: ToastService) {
+              private toastService: ToastService,
+              private stateService: StateService) {
   }
 
   ngOnInit(): void {
@@ -88,7 +90,7 @@ export class HomeComponent implements OnInit {
   }
 
   browse(repo: Repository) {
-    console.log('Selected repo:', repo);
+    this.stateService.setRepo(repo);
   }
 
 }

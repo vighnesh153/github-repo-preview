@@ -1,0 +1,26 @@
+.container {
+  height: 90vh;
+  position: relative;
+
+  border: 1px solid red;
+
+  display: flex;
+}
+
+.col {
+  height: 100%;
+
+  overflow: auto;
+}
+
+.left-col {
+  width: 30%;
+
+  border: 1px solid red;
+}
+
+.right-col {
+  width: 70%;
+
+  border: 1px solid red;
+}
