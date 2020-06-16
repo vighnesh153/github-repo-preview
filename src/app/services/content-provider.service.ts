@@ -19,4 +19,26 @@ export class ContentProviderService {
 
     return this.http.get(reposUrl).pipe(take(1));
   }
+
+  getDirContent(url: string): Observable<any> {
+    return this.http.get(url).pipe(take(1));
+  }
+
+  getRawFileContent(url: string): Observable<string> {
+    return this.http.get(url, { responseType: 'text' }).pipe(take(1));
+  }
+
+  getExtension(url: string): string {
+    const urlParts = url.split('/');
+    while (urlParts[urlParts.length - 1].length === 0) {
+      urlParts.pop();
+    }
+
+    const fileName = urlParts[urlParts.length - 1];
+    if (fileName.indexOf('.') === -1) {
+      return fileName;
+    }
+    const fileParts = fileName.split('.');
+    return fileParts[fileParts.length - 1];
+  }
 }

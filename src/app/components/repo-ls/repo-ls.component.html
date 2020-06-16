@@ -1,8 +1,20 @@
 <div class="container">
   <div class="col left-col">
-    I am the left column
+    <app-file-tree
+      [fileName]="repository?.name"
+      [contentsUrl]="repository?.contents_url"
+      [isDir]="true"
+      [isExpanded]="true"
+    ></app-file-tree>
   </div>
   <div class="col right-col">
-    I am the right column
+    <div class="code-container">
+      <ngx-monaco-editor
+        *ngIf="showEditor"
+        class="code-viewer"
+        [options]="editorOptions"
+        [(ngModel)]="code"
+      ></ngx-monaco-editor>
+    </div>
   </div>
 </div>

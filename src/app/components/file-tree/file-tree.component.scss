@@ -1,0 +1,35 @@
+.tree {
+  margin-left: 20px;
+  margin-top: 5px;
+
+  font-size: 20px;
+
+  .current-content {
+    display: flex;
+  }
+}
+
+.expand-icon {
+  width: 20px;
+  margin-right: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  svg {
+    height: 24px;
+  }
+}
+
+.file-name {
+  user-select: none;
+  cursor: pointer;
+}
+
+.no-display {
+  height: 0;
+  overflow: hidden;
+}

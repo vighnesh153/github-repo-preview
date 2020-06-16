@@ -2,13 +2,12 @@
   height: 90vh;
   position: relative;
 
-  border: 1px solid red;
-
   display: flex;
 }
 
 .col {
   height: 100%;
+  position: relative;
 
   overflow: auto;
 }
@@ -16,11 +15,25 @@
 .left-col {
   width: 30%;
 
-  border: 1px solid red;
+  //border: 1px solid red;
 }
 
 .right-col {
   width: 70%;
+  position: relative;
 
-  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  background-color: #1E1E1E;
+  overflow: hidden;
+
+  .code-container {
+    height: 98%;
+  }
+
+  .code-viewer {
+    height: 100%;
+  }
 }
